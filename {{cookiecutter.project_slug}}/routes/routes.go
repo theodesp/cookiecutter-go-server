@@ -11,10 +11,10 @@ type Route struct {
 var Routes = []Route {
 	{
 		Path: "/fizz",
-		Handler: fizzHandler,
+		Handler: FizzHandler,
 	},
 }
 
-func fizzHandler(w http.ResponseWriter, _ *http.Request)  {
+func FizzHandler(w http.ResponseWriter, _ *http.Request)  {
 	w.Write([]byte("buzz"))
 }

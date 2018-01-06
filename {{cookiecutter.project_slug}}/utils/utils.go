@@ -2,7 +2,7 @@ package utils
 
 import (
 	"net/http"
-	_ "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/routes"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/routes"
 )
 
 
