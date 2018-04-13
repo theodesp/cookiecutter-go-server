@@ -6,11 +6,12 @@ format:
 debs:
 	GOPATH=$(GOPATH) go get ./...
 	GOPATH=$(GOPATH) go get -u gopkg.in/check.v1
+	GOPATH=$(GOPATH) go get -u github.com/golang/lint/golint
 	GOPATH=$(GOPATH) go get -u github.com/fortytw2/leaktest
-	GOPATH=$(GOPATH) go get -u github.com/joho/godotenv
 
 .PHONY: test
 test:
+	GOPATH=$(GOPATH) golint -set_exit_status $(go list ./...)
 	GOPATH=$(GOPATH) go test -race -gcflags -m
 
 .PHONY: bench
